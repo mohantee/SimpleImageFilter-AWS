@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Filter Frontend</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header style="text-align:center; margin-top:30px;">
+        <h1>Simple Image Filter</h1>
+        <p>Apply various filters (Sharpen, Smoothen, Blur, Edge, Invert Colours, Grayscale) to your own images or to sample animal images.</p>
+    </header>
+    <div class="container">
+        <div class="box" id="input-box">
+            <h2>Select or Upload Image</h2>
+            <p>Choose a sample animal image or upload your own image to apply filters.</p>
+            <div style="margin-bottom:10px;">
+                <label><input type="checkbox" name="animal" value="cat"> Cat</label>
+                <label><input type="checkbox" name="animal" value="dog"> Dog</label>
+                <label><input type="checkbox" name="animal" value="elephant"> Elephant</label>
+            </div>
+            <div id="animal-image"></div>
+            <div style="margin-top:20px;">
+                <input type="file" id="file-input">
+                <div id="file-info"></div>
+            </div>
+        </div>
+        <div class="box" id="filter-box">
+            <h2>Apply Filter</h2>
+            <p>Select a filter and click "Apply Filter" to see the result below.</p>
+            <div id="filter-section">
+                <label for="filter-select"><strong>Choose a filter:</strong></label>
+                <select id="filter-select">
+                    <option value="sharpen">Sharpen</option>
+                    <option value="blur">Blur</option>
+                    <option value="smoothen">Smoothen</option>
+                    <option value="edge">Edge</option>
+                    <option value="invert">Invert Colours</option>
+                    <option value="grayscale">Grayscale</option>
+                </select>
+                <button id="apply-filter-btn">Apply Filter</button>
+            </div>
+            <div id="filtered-image" style="margin-top:20px;"></div>
+            <div id="download-link" style="margin-top:10px;"></div>
+        </div>
+    </div>
+    <div id="theme-toggle" class="theme-switch" style="position:fixed;top:20px;right:20px;z-index:1000;cursor:pointer;display:flex;flex-direction:column;align-items:center;">
+        <input type="checkbox" id="theme-switch-checkbox" />
+        <label for="theme-switch-checkbox" class="theme-switch-label">
+            <span class="switch-text day">DAY</span>
+            <span class="switch-text night">NIGHT</span>
+            <span class="switch-icon"></span>
+        </label>
+        
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>

@@ -53,5 +53,30 @@
         <span style="font-size:0.95em;margin-top:2px;user-select:none;">Theme</span>
     </div>
     <script src="/static/script.js"></script>
+
+    <!-- Chat widget (assistant) -->
+    <div id="chat-widget" class="chat-collapsed" aria-hidden="true">
+      <button id="chat-toggle" class="" aria-label="Open assistant">
+        <!-- chat bot icon -->
+        <img src="/static/images/bot.png" alt="Chat Bot Icon" class="chat-bot-img" />
+        <span class="chat-bot-label">Chat Bot</span>
+      </button>
+
+      <div class="chat-panel" role="dialog" aria-label="Assistant chat" hidden>
+        <header class="chat-header">
+          <div class="chat-title">Assistant</div>
+          <button id="chat-close" class="chat-close" aria-label="Close chat">×</button>
+        </header>
+
+        <div class="chat-intro">Ask Me</div>
+
+        <div id="chat-messages" class="chat-messages" role="log" aria-live="polite"></div>
+
+        <form id="chat-form" class="chat-form" autocomplete="off">
+          <input id="chat-input" class="chat-input" type="text" name="prompt" placeholder="Ask about the app, filters or images..." aria-label="Message" />
+          <button id="chat-send" class="chat-send" type="submit" aria-label="Send message">Send</button>
+        </form>
+      </div>
+    </div>
 </body>
 </html>
